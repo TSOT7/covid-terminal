@@ -4,6 +4,7 @@ covid19 = COVID19Py.COVID19()
 covid19 = COVID19Py.COVID19(data_source="nyt")
 latest = covid19.getLatest()
 changes = covid19.getLatestChanges()
+location = covid19.getLocationByCountryCode("US")
 def load():
         print(
         '''
@@ -40,6 +41,9 @@ def load():
                 elif cmd == "-exit":
                         print("Bye bye!")
                         break
+                elif cmd == "-USA":
+                        print(location)
+                        continue
                 else:
                         print("invalid.")
                         continue
